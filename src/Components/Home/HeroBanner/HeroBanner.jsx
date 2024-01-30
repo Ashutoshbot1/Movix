@@ -25,8 +25,8 @@ const HeroBanner = () => {
   }, [data]);
 
   // Function searchQueryHandler
-  function searchQueryHandler(e) {
-    if (e.key === "Enter" && query.length > 0) {
+  function searchQueryHandler(e,btnClick) {
+    if ((e.key === "Enter" || btnClick) && query.trim().length > 0) {
       navigate(`/search/${query}`);
     }
   }
@@ -52,7 +52,7 @@ const HeroBanner = () => {
               onKeyUp={searchQueryHandler}
               placeholder="Search for movie or tv show ..."
             />
-            <button>Search</button>
+            <button onClick={(e)=>searchQueryHandler(e,true)}>Search</button>
           </div>
         </div>
       </ContentWrapper>
