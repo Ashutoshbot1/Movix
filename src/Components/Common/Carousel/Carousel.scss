@@ -12,26 +12,51 @@
     }
     .arrow {
         font-size: 30px;
-        color: black;
+        color: white;
         position: absolute;
-        top: 44%;
         transform: translateY(-50%);
         cursor: pointer;
         opacity: 0.5;
         z-index: 1;
         display: none;
+        transition: opacity .3s ease-in-out;
+        padding: 4px;
         @include md {
             display: block;
+            top: 38%;
+        }
+        @include lg{
+            top: 40.3%;
         }
         &:hover {
             opacity: 0.8;
         }
     }
+
     .carouselLeftNav {
+        // border: 2px solid white;
         left: 30px;
+        margin-left: -10px;
+        width: 50px;
+        background-color: black;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        @include md{
+            height:78%;
+
+        }
+        @include lg{
+            height:81%;
+        }
     }
     .carouselRighttNav {
         right: 30px;
+        height:81%;
+        margin-right: -10px;
+        width: 50px;
+        background-color: black;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
     .loadingSkeleton {
         display: flex;
